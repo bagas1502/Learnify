@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learnify — Онлайн-курсы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  
+  <style>
+
+  </style>
+</head>
+<link rel="stylesheet" href="styles.css">
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Хедер с меню -->
+  <header class="bg-white shadow-md sticky top-0 z-20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="text-2xl font-extrabold text-blue-600 cursor-pointer" onclick="scrollToSection('main')">Learnify</div>
+      <nav class="space-x-3 hidden md:flex">
+        <button class="nav-btn active" data-target="main">Главное</button>
+        <button class="nav-btn" data-target="about">Про сайт</button>
+        <button class="nav-btn" data-target="courses-section">Курсы</button>
+        <button class="nav-btn" data-target="professions">Профессии</button>
+        <button class="nav-btn" data-target="reviews">Комментарии</button>
+        <button class="nav-btn" data-target="contacts">Контакты</button>
+      </nav>
+      <!-- Мобильное меню (кнопка) -->
+      <button id="mobile-menu-btn" class="md:hidden text-blue-600 text-2xl">&#9776;</button>
+    </div>
+    <!-- Мобильное меню (скрыто по умолчанию) -->
+    <div id="mobile-menu" class="hidden bg-white shadow-md px-6 py-4 space-y-2 md:hidden">
+      <button class="nav-btn-mobile w-full text-left" data-target="main">Главное</button>
+      <button class="nav-btn-mobile w-full text-left" data-target="about">Про сайт</button>
+      <button class="nav-btn-mobile w-full text-left" data-target="courses-section">Курсы</button>
+      <button class="nav-btn-mobile w-full text-left" data-target="professions">Профессии</button>
+      <button class="nav-btn-mobile w-full text-left" data-target="reviews">Комментарии</button>
+      <button class="nav-btn-mobile w-full text-left" data-target="contacts">Контакты</button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 flex gap-6">
+    <!-- Сайдбар с фильтрами -->
+    <aside class="w-64 hidden md:block bg-white shadow rounded-lg p-4">
+      <h2 class="text-lg font-bold mb-4">Фильтр по категориям</h2>
+      <ul>
+        <li><button class="filter-btn active" data-filter="all">Все курсы</button></li>
+        <li><button class="filter-btn" data-filter="programming">Программирование</button></li>
+        <li><button class="filter-btn" data-filter="design">Дизайн</button></li>
+        <li><button class="filter-btn" data-filter="adobe-photoshop">Adobe Photoshop</button></li>
+        <li><button class="filter-btn" data-filter="adobe-illustrator">Adobe Illustrator</button></li>
+        <li><button class="filter-btn" data-filter="adobe-after-effects">Adobe After Effects</button></li>
+        <li><button class="filter-btn" data-filter="adobe-premiere-pro">Adobe Premiere Pro</button></li>
+        <li><button class="filter-btn" data-filter="adobe-xd">Adobe XD</button></li>
+        <li><button class="filter-btn" data-filter="adobe-lightroom">Adobe Lightroom</button></li>
+        <li><button class="filter-btn" data-filter="figma">Figma</button></li>
+        <li><button class="filter-btn" data-filter="blender">Blender</button></li>
+        <li><button class="filter-btn" data-filter="marketing">Маркетинг</button></li>
+      </ul>
+    </aside>
+
+    <!-- Контент с секциями -->
+    <section class="flex-1 space-y-16">
+      <!-- Главное -->
+      <section id="main" class="scroll-mt-24">
+        <h1 class="text-4xl font-extrabold mb-6 text-center text-blue-600">Добро пожаловать в Learnify</h1>
+        <p class="max-w-3xl mx-auto text-lg text-gray-700 text-center">
+          Платформа онлайн-обучения, где каждый может найти идеальный курс по программированию, дизайну и маркетингу.
+          Начни развиваться уже сегодня!
+        </p>
+      </section>
+
+      <!-- Про сайт -->
+      <section id="about" class="scroll-mt-24 bg-white rounded-lg shadow p-6">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">О Learnify</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Learnify — это современная платформа для онлайн-обучения. Мы собрали лучшие курсы по самым востребованным
+          направлениям: программирование, дизайн, маркетинг. У нас удобно выбирать, учиться и развиваться в собственном темпе.
+          Все курсы подготовлены экспертами индустрии.
+        </p>
+      </section>
+
+      <!-- Курсы -->
+      <section id="courses-section" class="scroll-mt-24">
+        <h2 class="text-3xl font-bold mb-6 text-blue-700">Онлайн-курсы</h2>
+        <div id="course-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section>
+
+      <!-- Профессии -->
+      <section id="professions" class="scroll-mt-24 bg-white rounded-lg shadow p-6">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Популярные профессии</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+          <li>Веб-разработчик</li>
+          <li>Фронтенд-разработчик</li>
+          <li>Дизайнер UI/UX</li>
+          <li>SEO-специалист</li>
+          <li>Специалист по маркетингу</li>
+          <li>3D-моделлер</li>
+          <li>Продуктовый менеджер</li>
+        </ul>
+      </section>
+
+      <!-- Комментарии -->
+      <section id="reviews" class="scroll-mt-24 bg-white rounded-lg shadow p-6">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Отзывы наших студентов</h2>
+        <div class="space-y-4 text-gray-700">
+          <blockquote class="border-l-4 border-blue-600 pl-4 italic">
+            «Learnify помог мне освоить веб-разработку с нуля. Курсы качественные, поддержка отличная.»
+            <br /><b>— Алексей</b>
+          </blockquote>
+          <blockquote class="border-l-4 border-blue-600 pl-4 italic">
+            «Очень понравились курсы по дизайну, особенно уроки по Figma и Adobe Photoshop.»
+            <br /><b>— Марина</b>
+          </blockquote>
+          <blockquote class="border-l-4 border-blue-600 pl-4 italic">
+            «Обучение здесь помогло мне сменить профессию и найти новую работу мечты.»
+            <br /><b>— Сергей</b>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Контакты -->
+      <section id="contacts" class="scroll-mt-24 bg-white rounded-lg shadow p-6">
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">Контакты</h2>
+        <p class="text-gray-700">
+          Почта: <a href="mailto:support@learnify.ru" class="text-blue-600 underline">support@learnify.ru</a><br />
+          Телефон: +7 (123) 456-78-90<br />
+          Адрес: г. Москва, ул. Образовательная, д. 10
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Футер -->
+  <footer class="bg-white shadow-inner mt-16 py-6 text-center text-gray-600">
+    &copy; 2025 Learnify. Все права защищены.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
